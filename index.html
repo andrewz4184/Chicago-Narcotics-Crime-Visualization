@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chicago Narcotics Crime Visualization</title>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>Narcotics Crime Concentration in Chicago</h1>
+<p class="instruction">Drag on the timeline to select a time range and filter the map. Double-click to clear the selection.</p>
+
+<div id="timeline"></div>
+<div id="districtMap"></div>
+
+<section id="writeup">
+  <h2>Dataset</h2>
+  <p>Chicago Police Department CLEAR dataset. Narcotics crimes from 2001 to present. District boundaries from City of Chicago Data Portal.</p>
+  <h2>Interactions</h2>
+  <p><strong>Brushing and linking:</strong> Drag on the timeline to select a time range; the choropleth updates to show narcotics crime concentration for that period.</p>
+  <p><strong>Tooltips:</strong> Hover over a district to see its number and crime count.</p>
+  <p><strong>Highlighting:</strong> Hovering highlights the district and dims others.</p>
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
