@@ -1,0 +1,40 @@
+body {
+  font-family: Arial;
+  margin: 20px;
+}
+
+.instruction {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+#timeline,
+#districtMap {
+  margin-bottom: 20px;
+}
+
+.district {
+  transition: fill 0.2s, opacity 0.2s;
+}
+
+.district.highlighted {
+  stroke-width: 2;
+  stroke: #333;
+}
+
+.district.dimmed {
+  opacity: 0.5;
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid gray;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
