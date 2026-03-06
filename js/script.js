@@ -48,21 +48,15 @@ Promise.all([
   createLineChart(byMonth, updateMap);
 });
 
-/**
- * Normalize district ID for joining GeoJSON with crime data.
- * GeoJSON uses "17"; crimes use "017".
- */
+
+ // Normalize district ID for joining GeoJSON with crime data.
+
 function districtKey(num) {
   return String(num).padStart(3, "0");
 }
 
-/**
- * Create choropleth map of Chicago police districts.
- * @param {Object} geoData - GeoJSON FeatureCollection
- * @param {Array} byDistrict - Full aggregated crime counts by district
- * @param {Map} byDistrictMonth - District -> (month -> count) for filtering
- * @returns {Function} updateMap(timeRange) - Update map with filtered data
- */
+// Create choropleth map of Chicago police districts.
+ 
 function createMap(geoData, byDistrict, byDistrictMonth) {
   const width = 700;
   const height = 500;
@@ -95,10 +89,7 @@ function createMap(geoData, byDistrict, byDistrictMonth) {
     .attr("class", "legend")
     .attr("transform", `translate(${width - 150}, 20)`);
 
-  /**
-   * Update map with filtered crime counts.
-   * @param {Array|null} timeRange - [startDate, endDate] or null for full data
-   */
+  // Update map with filtered crime counts.
   function updateMap(timeRange) {
     let crimeByDistrict;
     if (timeRange) {
@@ -276,3 +267,4 @@ function createLineChart(byMonth, updateMap) {
     .attr("class", "brush")
     .call(brush);
 }
+
